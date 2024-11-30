@@ -1,3 +1,7 @@
+EXPLAIN ANALYZE SELECT * FROM user;
+
+EXPLAIN ANALYZE SELECT * FROM review WHERE rating > 3;
+
 CREATE INDEX idx_user_email ON User (email);
 
 CREATE INDEX idx_property_host_id ON Property (host_id);
@@ -15,3 +19,7 @@ CREATE INDEX idx_review_user_id ON Review (user_id);
 CREATE INDEX idx_message_sender_id ON Message (sender_id);
 
 CREATE INDEX idx_message_recipient_id ON Message (recipient_id);
+
+EXPLAIN ANALYZE SELECT * FROM user;
+
+EXPLAIN ANALYZE SELECT * FROM review WHERE rating > 3;
