@@ -1,5 +1,5 @@
-CREATE TABLE User (
-    user_id UUID PRIMARY KEY,
+CREATE TABLE IF NOT EXISTS User (
+    user_id CHAR(36) PRIMARY KEY,
     first_name VARCHAR(255) NOT NULL,
     last_name VARCHAR(255) NOT NULL,
     email VARCHAR(255) UNIQUE NOT NULL,
@@ -9,9 +9,9 @@ CREATE TABLE User (
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
-CREATE TABLE Property (
-    property_id UUID PRIMARY KEY,
-    host_id UUID,
+CREATE TABLE IF NOT EXISTS Property (
+    property_id CHAR(36) PRIMARY KEY,
+    host_id CHAR(36),
     name VARCHAR(255) NOT NULL,
     description TEXT NOT NULL,
     location VARCHAR(255) NOT NULL,
@@ -21,10 +21,10 @@ CREATE TABLE Property (
     FOREIGN KEY (host_id) REFERENCES User (user_id)
 );
 
-CREATE TABLE Booking (
-    booking_id UUID PRIMARY KEY,
-    property_id UUID,
-    user_id UUID,
+CREATE TABLE IF NOT EXISTS Booking (
+    booking_id CHAR(36) PRIMARY KEY,
+    property_id CHAR(36),
+    user_id CHAR(36),
     start_date DATE NOT NULL,
     end_date DATE NOT NULL,
     total_price DECIMAL(10, 2) NOT NULL,
@@ -38,9 +38,9 @@ CREATE TABLE Booking (
     FOREIGN KEY (user_id) REFERENCES User (user_id)
 );
 
-CREATE TABLE Payment (
-    payment_id UUID PRIMARY KEY,
-    booking_id UUID,
+CREATE TABLE IF NOT EXISTS Payment (
+    payment_id CHAR(36) PRIMARY KEY,
+    booking_id CHAR(36),
     amount DECIMAL(10, 2) NOT NULL,
     payment_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     payment_method ENUM(
@@ -51,10 +51,10 @@ CREATE TABLE Payment (
     FOREIGN KEY (booking_id) REFERENCES Booking (booking_id)
 );
 
-CREATE TABLE Review (
-    review_id UUID PRIMARY KEY,
-    property_id UUID,
-    user_id UUID,
+CREATE TABLE IF NOT EXISTS Review (
+    review_id CHAR(36) PRIMARY KEY,
+    property_id CHAR(36),
+    user_id CHAR(36),
     rating INTEGER CHECK (
         rating >= 1
         AND rating <= 5
@@ -65,10 +65,10 @@ CREATE TABLE Review (
     FOREIGN KEY (user_id) REFERENCES User (user_id)
 );
 
-CREATE TABLE Message (
-    message_id UUID PRIMARY KEY,
-    sender_id UUID,
-    recipient_id UUID,
+CREATE TABLE IF NOT EXISTS Message (
+    message_id CHAR(36) PRIMARY KEY,
+    sender_id CHAR(36),
+    recipient_id CHAR(36),
     message_body TEXT NOT NULL,
     sent_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     FOREIGN KEY (sender_id) REFERENCES User (user_id),
