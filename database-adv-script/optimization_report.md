@@ -1,0 +1,1 @@
+JOIN is so efficient in reducing data redundancy. Indexing is also useful in such cases.
