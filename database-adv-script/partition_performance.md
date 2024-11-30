@@ -1,0 +1,1 @@
+Partitioning is really efficiency in terms of only focusing on where the data we want to retrieve is.
