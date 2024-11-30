@@ -1,5 +1,5 @@
 SELECT property_id FROM property p
-WHERE (SELECT r.rating FROM review r WHERE r.property_id = p.property_id) > 4;
+WHERE (SELECT AVG(r.rating) FROM review r WHERE r.property_id = p.property_id) > 4.0;
 
 SELECT user.first_name, user.last_name
 FROM user
