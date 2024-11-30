@@ -1,29 +1,29 @@
 SELECT *
-FROM booking, user, property, payment
+FROM "Booking", "User", "Property", "Payment"
 WHERE
-    booking.user_id = user.user_id
-    AND booking.property_id = property.property_id
-    AND booking.booking_id = payment.booking_id;
+    "Booking"."user_id" = "User"."user_id"
+    AND "Booking"."property_id" = "Property"."property_id"
+    AND "Booking"."booking_id" = "Payment"."booking_id";
 
 EXPLAIN
 SELECT *
-FROM booking, user, property, payment
+FROM "Booking", "User", "Property", "Payment"
 WHERE
-    booking.user_id = user.user_id
-    AND booking.property_id = property.property_id
-    AND booking.booking_id = payment.booking_id;
+    "Booking"."user_id" = "User"."user_id"
+    AND "Booking"."property_id" = "Property"."property_id"
+    AND "Booking"."booking_id" = "Payment"."booking_id";
 
 SELECT *
 FROM
-    booking
-    JOIN user ON booking.user_id = user.user_id
-    JOIN property ON booking.property_id = property.property_id
-    JOIN payment ON booking.booking_id = payment.booking_id;
+    "Booking"
+    JOIN "User" ON "Booking"."user_id" = "User"."user_id"
+    JOIN "Property" ON "Booking"."property_id" = "Property"."property_id"
+    JOIN "Payment" ON "Booking"."booking_id" = "Payment"."booking_id";
 
 EXPLAIN
 SELECT *
 FROM
-    booking
-    JOIN user ON booking.user_id = user.user_id
-    JOIN property ON booking.property_id = property.property_id
-    JOIN payment ON booking.booking_id = payment.booking_id;
+    "Booking"
+    JOIN "User" ON "Booking"."user_id" = "User"."user_id"
+    JOIN "Property" ON "Booking"."property_id" = "Property"."property_id"
+    JOIN "Payment" ON "Booking"."booking_id" = "Payment"."booking_id";

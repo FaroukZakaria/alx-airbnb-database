@@ -1,6 +1,6 @@
 -- Insert Users
 INSERT INTO
-    User (
+    "User" (
         user_id,
         first_name,
         last_name,
@@ -39,7 +39,7 @@ VALUES (
 
 -- Insert Properties
 INSERT INTO
-    Property (
+    "Property" (
         property_id,
         host_id,
         name,
@@ -66,7 +66,7 @@ VALUES (
 
 -- Insert Bookings
 INSERT INTO
-    Booking (
+    "Booking" (
         booking_id,
         property_id,
         user_id,
@@ -96,7 +96,7 @@ VALUES (
 
 -- Insert Payments
 INSERT INTO
-    Payment (
+    "Payment" (
         payment_id,
         booking_id,
         amount,
@@ -117,7 +117,7 @@ VALUES (
 
 -- Insert Reviews
 INSERT INTO
-    Review (
+    "Review" (
         review_id,
         property_id,
         user_id,
@@ -141,7 +141,7 @@ VALUES (
 
 -- Insert Messages
 INSERT INTO
-    Message (
+    "Message" (
         message_id,
         sender_id,
         recipient_id,

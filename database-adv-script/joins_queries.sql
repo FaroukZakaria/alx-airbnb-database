@@ -1,25 +1,16 @@
--- Active: 1729273844358@@127.0.0.1@3306@prodev
-SELECT booking.booking_id, user.first_name, user.last_name
-FROM booking
-    INNER JOIN user ON booking.user_id = user.user_id;
+SELECT "Booking".booking_id, "User".first_name, "User".last_name
+FROM "Booking"
+    INNER JOIN "User" ON "Booking".user_id = "User".user_id;
 
-SELECT booking.booking_id, user.first_name, user.last_name
-FROM booking
-    LEFT JOIN user ON booking.user_id = user.user_id
-ORDER BY user.last_name, user.first_name;
+SELECT "Booking"."booking_id", "User"."first_name", "User"."last_name"
+FROM "Booking"
+    LEFT JOIN "User" ON "Booking"."user_id" = "User"."user_id"
+ORDER BY "User"."last_name", "User"."first_name";
 
-SELECT booking.booking_id, user.first_name, user.last_name
-FROM booking
-    RIGHT JOIN user ON booking.user_id = user.user_id;
+SELECT "Booking"."booking_id", "User"."first_name", "User"."last_name"
+FROM "Booking"
+    RIGHT JOIN "User" ON "Booking"."user_id" = "User"."user_id";
 
-SELECT booking.booking_id, user.first_name, user.last_name
-FROM booking
-    FULL OUTER JOIN user ON booking.user_id = user.user_id;
--- SELECT booking.booking_id, user.first_name, user.last_name
--- FROM booking
---     LEFT JOIN user ON booking.user_id = user.user_id
--- UNION
--- SELECT booking.booking_id, user.first_name, user.last_name
--- FROM booking
---     RIGHT JOIN user ON booking.user_id = user.user_id;
--- FOR MYSQL
+SELECT "Booking"."booking_id", "User"."first_name", "User"."last_name"
+FROM "Booking"
+    FULL OUTER JOIN "User" ON "Booking"."user_id" = "User"."user_id";

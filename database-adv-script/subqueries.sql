@@ -1,11 +1,12 @@
-SELECT property_id FROM property p
-WHERE (SELECT AVG(r.rating) FROM review r WHERE r.property_id = p.property_id) > 4.0;
+-- Active: 1733001607402@@127.0.0.1@5432@prodev
+SELECT property_id FROM "Property" p
+WHERE (SELECT AVG(r.rating) FROM "Review" r WHERE r.property_id = p.property_id) > 4.0;
 
-SELECT user.first_name, user.last_name
-FROM user
-WHERE user.user_id IN (
-    SELECT booking.user_id
-    FROM booking
-    GROUP BY booking.user_id
-    HAVING COUNT(booking.booking_id) > 3
+SELECT "User".first_name, "User".last_name
+FROM "User"
+WHERE "User".user_id IN (
+    SELECT "Booking".user_id
+    FROM "Booking"
+    GROUP BY "Booking".user_id
+    HAVING COUNT("Booking".booking_id) > 3
 );
