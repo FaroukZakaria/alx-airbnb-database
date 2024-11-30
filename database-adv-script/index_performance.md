@@ -1,0 +1,1 @@
+High usage is in booking.booking_id, property.propety_id and their references (Foreign keys) in other tables
