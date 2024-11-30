@@ -5,15 +5,16 @@ FROM booking
 
 SELECT booking.booking_id, user.first_name, user.last_name
 FROM booking
-    LEFT JOIN user ON booking.user_id = user.user_id;
+    LEFT JOIN user ON booking.user_id = user.user_id
+ORDER BY user.last_name, user.first_name;
 
 SELECT booking.booking_id, user.first_name, user.last_name
 FROM booking
     RIGHT JOIN user ON booking.user_id = user.user_id;
 
 SELECT booking.booking_id, user.first_name, user.last_name
-FROM booking FULL OUTER
-    JOIN user ON booking.user_id = user.user_id
+FROM booking
+    FULL OUTER JOIN user ON booking.user_id = user.user_id;
 -- SELECT booking.booking_id, user.first_name, user.last_name
 -- FROM booking
 --     LEFT JOIN user ON booking.user_id = user.user_id
