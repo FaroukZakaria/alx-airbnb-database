@@ -1,0 +1,1 @@
+Despite the database I have being so small and not massively filled with data. I can not determine ideally how a query can be optimized more but I have grasped the concept of how to check for efficiencies.
